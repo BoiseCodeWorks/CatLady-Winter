@@ -38,8 +38,18 @@ function drawCat() {
   nameElem.innerText = activeCat.name;
   // @ts-ignore
   petsElem.innerText = activeCat.pets;
-  statusElem.innerText = activeCat.status;
+  statusElem.innerText = activeCat.mood;
   imgElem.setAttribute("src", activeCat.img);
 }
 
 drawCat();
+
+function setActiveCat(catName) {
+  activeCat = cats[catName];
+  drawCat();
+}
+
+function catnip() {
+  activeCat.pets = 0;
+  drawCat();
+}
