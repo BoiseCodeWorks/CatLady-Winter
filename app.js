@@ -31,6 +31,10 @@ let imgElem = document.querySelector("#cat-pic");
 
 function pet() {
   activeCat.pets++;
+
+  if (activeCat.pets > activeCat.tolerance) {
+    activeCat.mood = "bitey";
+  }
   drawCat();
 }
 function drawCat() {
@@ -51,5 +55,6 @@ function setActiveCat(catName) {
 
 function catnip() {
   activeCat.pets = 0;
+  activeCat.mood = "Happy";
   drawCat();
 }
